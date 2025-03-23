@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:opsz,wght@6..96,900&family=Cedarville+Cursive&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+        .bg-brown {
+            background-color: #3e2a1f; /* Dark brown */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important; 
+        }
+
+        .btn-sign-in, .btn-cart {
+            color: black !important; 
+        }
+
+        .btn-brown {
+            background-color: #6f4e37;
+            border: none;
+            color: #fff;
+        }
+
+        .btn-brown:hover {
+            background-color: #5f4432;
+        }
+
+        .card-body {
+            color: black; 
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        main {
+            padding-top: 100px; 
+        }
+
+        .cart-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item .card-img {
+            width: 100%;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .cart-item .card-body {
+            padding: 15px;
+        }
+
+        .cart-item .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .cart-item .card-text {
+            margin-bottom: 5px;
+        }
+
+        .quantity-controls {
+            margin-top: 10px;
+        }
+
+        .btn-quantity {
+            margin-right: 5px;
+        }
+
+        .btn-proceed-checkout {
+            margin-top: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Coffee Shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="bg-brown text-white p-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="home.html"> Brew Haven  <i class="fas fa-mug-hot"></i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-sign-in text-white ml-2" href="login.html">Sign In</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-cart text-white ml-2" href="checkout.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <h1 class="text-center mb-4">Your Cart</h1>
+        
+        <!-- Cart Items -->
+        <div id="cartContainer">
+        <div class="cart-item card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="pastry1.avif" class="card-img" alt="Coffee Item">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Butter Croissant</h5>
+                        <p class="card-text"><strong>Price: $3.00</strong></p>
+                        <div class="quantity-controls">
+                            <span class="quantity">Quantity: 1</span>
+                            <button class="btn btn-sm btn-secondary btn-quantity" onclick="decrementQuantity(this)">-</button>
+                            <button class="btn btn-sm btn-secondary btn-quantity" onclick="incrementQuantity(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-item card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="coffee1.jpg" class="card-img" alt="Coffee Item">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Chip</h5>
+                        <p class="card-text"><strong>Price: $1.00</strong></p>
+                        <div class="quantity-controls">
+                            <span class="quantity">Quantity: 1</span>
+                            <button class="btn btn-sm btn-secondary btn-quantity" onclick="decrementQuantity(this)">-</button>
+                            <button class="btn btn-sm btn-secondary btn-quantity" onclick="incrementQuantity(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-item card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="pastry3.avif" class="card-img" alt="Coffee Item">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Plain Bagel</h5>
+                        <p class="card-text"><strong>Price: $1.00</strong></p>
+                        <div class="quantity-controls">
+                            <span class="quantity">Quantity: 1</span>
+                            <button class="btn btn-sm btn-secondary btn-quantity" onclick="decrementQuantity(this)">-</button>
+                            <button class="btn btn-sm btn-secondary btn-quantity" onclick="incrementQuantity(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Proceed to Checkout Button -->
+        <div class="text-center btn-proceed-checkout">
+            <button class="btn btn-brown btn-lg" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+        
+    </main>
+    
+    <footer class="bg-brown text-white p-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function loadCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartContainer = document.getElementById('cartContainer');
+    cartContainer.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p class='text-center'>Your cart is empty.</p>";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        cartContainer.innerHTML += `
+            <div class="cart-item card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="${item.image}" class="card-img" alt="${item.name}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.name}</h5>
+                            <p class="card-text"><strong>Price: $${item.price.toFixed(2)}</strong></p>
+                            <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+}
+
+function proceedToCheckout() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        alert("Your cart is empty! Add items before proceeding to checkout.");
+        return;
+    }
+
+    alert("Successfully checked out!");
+    localStorage.removeItem('cart'); // Clear cart after successful checkout
+    loadCart();
+}
+
+
+document.addEventListener("DOMContentLoaded", loadCart);
+
+        
+        function showAlert() {
+            alert("Successfully checked out!");
+        }
+
+        function incrementQuantity(button) {
+            var quantityElement = button.parentNode.querySelector('.quantity');
+            var currentQuantity = parseInt(quantityElement.textContent.split(': ')[1]);
+            quantityElement.textContent = 'Quantity: ' + (currentQuantity + 1);
+        }
+
+        function decrementQuantity(button) {
+            var quantityElement = button.parentNode.querySelector('.quantity');
+            var currentQuantity = parseInt(quantityElement.textContent.split(': ')[1]);
+            if (currentQuantity > 1) {
+                quantityElement.textContent = 'Quantity: ' + (currentQuantity - 1);
+            }
+        }
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

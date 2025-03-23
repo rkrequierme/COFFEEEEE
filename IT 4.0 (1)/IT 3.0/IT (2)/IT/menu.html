@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:opsz,wght@6..96,900&family=Cedarville+Cursive&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+        .bg-brown {
+            background-color: #3e2a1f; /* Dark brown */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important; /* Keep the nav links white */
+        }
+
+        .btn-sign-in, .btn-cart {
+            color: black !important; /* Black text for Sign In and Cart buttons */
+        }
+
+        .btn-brown {
+            background-color: #6f4e37;
+            border: none;
+            color: #fff;
+        }
+
+        .btn-brown:hover {
+            background-color: #5f4432;
+        }
+
+        .card-body {
+            color: black; /* Black text for card content */
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        main {
+            padding-top: 100px; /* Adjust this value as needed */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        // Example cart storage, replace with your actual cart management logic
+        let cartItems = [];
+
+        function addToCart(itemId, itemName, itemPrice, itemImage) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.push({ id: itemId, name: itemName, price: itemPrice, image: itemImage });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    document.getElementById('cartItemCount').innerText = cart.length;
+
+    alert('Added to Cart');
+}
+    </script>
+</head>
+<body>
+    <header class="bg-brown text-white p-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="home.html">Brew Haven  <i class="fas fa-mug-hot"></i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-sign-in text-white ml-2" href="login.html">Sign In</a></li>
+                        <!-- Cart icon -->
+                        <li class="nav-item"><a class="nav-link btn btn-cart text-white ml-2" href="checkout.html"><i class="fas fa-shopping-cart"></i> <span id="cartItemCount">0</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+   
+    <main class="container mt-5">
+        <h1 class="text-center mb-4">Beverages</h1>
+        <div class="row">
+            <!-- Beverages Section -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="coffee1.jpg" class="card-img-top" alt="Coffee Item 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Chip</h5>
+                        
+                        <p class="card-text"><strong>Price: $4.00</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Java Chip', 4.00, 'coffee1.jpg')">Add to Cart</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="coffee2.jfif" class="card-img-top" alt="Coffee Item 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Caffe Vanilla</h5>
+                        <p class="card-text"><strong>Price: $4.50</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Caffe Vanilla', 4.00, 'coffee2.jfif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="coffee3.jfif" class="card-img-top" alt="Coffee Item 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha Frappe</h5>
+
+                        <p class="card-text"><strong>Price: $5.00</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Mocha Frappe', 4.00, 'coffee3.jfif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Coffee Items -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="coffee4.jfif" class="card-img-top" alt="Coffee Item 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Dark Chocolate</h5>
+                        <p class="card-text"><strong>Price: $4.75</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Dark Chocolate', 4.00, 'coffee4.jfif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="coffee5.jfif" class="card-img-top" alt="Coffee Item 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Iced White Mocha</h5>
+                        <p class="card-text"><strong>Price: $5.25</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Iced White Mocha', 4.00, 'coffee5.jfif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="coffee6.jfif" class="card-img-top" alt="Coffee Item 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Caramel</h5>
+                        <p class="card-text"><strong>Price: $4.25</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Caramel', 4.00, 'coffee6.jfif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastries Section -->
+        <h1 class="text-center mb-4">Pastries</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="pastry1.avif" class="card-img-top" alt="Pastry Item 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Butter Croissant</h5>
+                        
+                        <p class="card-text"><strong>Price: $3.00</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Butter Croissant', 4.00, 'pastry1.avif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="pastry2.avif" class="card-img-top" alt="Pastry Item 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Iced Lemon Load</h5>
+                        
+                        <p class="card-text"><strong>Price: $2.50</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Iced Lemon Load', 4.00, 'pastry2.avif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="pastry3.avif" class="card-img-top" alt="Pastry Item 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Plain Bagel</h5>
+                       
+                        <p class="card-text"><strong>Price: $4.00</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Plain Bagel', 4.00, 'pastry3.avif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Pastry Items -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="pastry4.avif" class="card-img-top" alt="Pastry Item 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Vanilla Bean Scone</h5>
+                       
+                        <p class="card-text"><strong>Price: $3.50</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Vanilla Bean Scone', 4.00, 'pastry4.avif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="pastry5.jfif" class="card-img-top" alt="Pastry Item 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Blueberry Scone</h5>
+                        
+                        <p class="card-text"><strong>Price: $2.75</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Blueberry Scone', 4.00, 'pastry5.jfif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="pastry6.avif" class="card-img-top" alt="Pastry Item 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheese Danish</h5>
+                      
+                        <p class="card-text"><strong>Price: $3.25</strong></p>
+                        <a href="#" class="btn btn-brown" onclick="addToCart(1, 'Cheese Danish', 4.00, 'pastry6.avif')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-brown text-white p-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

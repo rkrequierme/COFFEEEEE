@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:opsz,wght@6..96,900&family=Cedarville+Cursive&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Coffee Shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .bg-brown {
+            background-color: #3e2a1f; /* Dark brown */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-brown text-white p-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="home.html">Brew Haven  <i class="fas fa-mug-hot"></i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-sign-in text-white ml-2" href="login.html">Sign In</a></li>
+                        <!-- Cart icon -->
+                        <li class="nav-item"><a class="nav-link btn btn-cart text-white ml-2" href="checkout.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <h1 class="text-center mb-4">Contact Us</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="contactForm" action="#" method="post" onsubmit="return onSubmit()">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Information:</label>
+                        <input type="text" id="contact" name="contact" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-brown">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-brown text-white p-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function onSubmit() {
+            alert("Submitted!");
+            document.getElementById("contactForm").reset(); // Reset the form fields
+            return false; // Prevent the form from actually submitting
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

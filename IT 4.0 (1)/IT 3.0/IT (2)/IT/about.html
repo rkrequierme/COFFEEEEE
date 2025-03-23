@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:opsz,wght@6..96,900&family=Cedarville+Cursive&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+
+        body {
+            background-image: url('bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: white; /* Default text color */
+        }
+
+        .text-white {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for readability */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            margin-right: 5px;
+            color: white; /* Navbar link color */
+        }
+
+        .btn-sign-in {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .btn-sign-in, .btn-cart {
+                margin-left: 5px;
+                margin-top: 5px;
+            }
+        }
+
+        .bg-brown {
+            background-color: #3e2a1f; /* Dark brown */
+        }
+
+        /* Optional: Adjusting heading styles */
+        h1 {
+            font-family: 'Anton SC', monospace;
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        p {
+            font-family: 'Open Sans', monospace;
+            font-weight: 400;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Brew Haven</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="bg-brown text-white p-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="home.html">Brew Haven  <i class="fas fa-mug-hot"></i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-sign-in text-white" href="login.html">Sign In</a></li>
+                        <!-- Cart icon -->
+                        <li class="nav-item"><a class="nav-link btn btn-cart text-white" href="checkout.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <h1 class="text-center mb-4 text-white">About Us</h1>
+        
+        <p class="text-white">Welcome to Brew Haven, your cozy corner of the city where the aroma of freshly brewed coffee and the warmth of a friendly smile greet you at the door. Nestled in the heart of Bacoor, we are passionate about creating the perfect coffee experience for our community.</p>
+        <p class="text-white">Our story began with a simple love for coffee and a desire to share that love with others. We believe that coffee is more than just a drink; it's a way to connect, unwind, and enjoy the small moments in life. That's why we source the finest beans from around the world, roast them to perfection, and brew each cup with care and precision.</p>
+        <p class="text-white">At Brew Haven, we offer a wide range of coffee and espresso drinks, from classic favorites like lattes and cappuccinos to innovative seasonal creations. For those who prefer something different, our menu also features a variety of teas, smoothies, and freshly baked pastries.</p>
+        <p class="text-white">Our inviting atmosphere is designed to make you feel right at home, whether you're catching up with friends, working on a project, or simply taking a break from your busy day. Our friendly baristas are always ready to recommend a new blend or chat about your favorite brew.</p>
+        <p class="text-white">We are more than just a coffee shop; we are a community hub where everyone is welcome. Join us for a cup of coffee and stay for the conversation. We look forward to serving you soon!</p>
+    </main>
+    <footer class="bg-brown text-white p-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
